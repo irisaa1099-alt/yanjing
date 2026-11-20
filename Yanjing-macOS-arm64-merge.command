@@ -11,6 +11,6 @@ for i in $(seq 1 6); do
   cat "$part" >> "$tmp"
 done
 digest=$(shasum -a 256 "$tmp")
-[[ "${digest%% *}" == "174f926778ed0eb3f1fd02b0f437ed7dafb2ee11a0c59cd7bad897d1e6b9df8c" ]] || { echo "SHA-256 mismatch. Download the parts again."; exit 1; }
+[[ "${digest%% *}" == "c9f92bfe35586a0774884630eda48363855f872d64518482d5baccea3002cc25" ]] || { echo "SHA-256 mismatch. Download the parts again."; exit 1; }
 ln "$tmp" "$out"
 echo "Verified $out"

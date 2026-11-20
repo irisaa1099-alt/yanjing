@@ -8,8 +8,8 @@
 
 | 平台 | 所需分卷 | 合并方法 | 解压后的启动入口 |
 | --- | --- | --- | --- |
-| [Windows 10/11 x64 · 11 月 21 日中文路径修复版](https://github.com/irisaa1099-alt/yanjing/releases/tag/2026.11.21-windows) | Yanjing-Windows-x64.zip.001 至 .009 | 双击 Yanjing-Windows-x64-merge.cmd | 在可写的本地 NTFS 中文或英文目录完整解压，双击「启动研镜.bat」 |
-| [Apple 芯片 Mac · 11 月 20 日版](https://github.com/irisaa1099-alt/yanjing/releases/tag/2026.11.20) | Yanjing-macOS-arm64.zip.001 至 .006 | 在下载目录打开终端，执行 `bash Yanjing-macOS-arm64-merge.command` | 完整解压，双击「启动研镜.command」 |
+| [Windows 10/11 x64 · 稳定性修复版](https://github.com/irisaa1099-alt/yanjing/releases/latest) | Yanjing-Windows-x64.zip.001 至 .009 | 双击 Yanjing-Windows-x64-merge.cmd | 在可写的本地 NTFS 中文或英文目录完整解压，双击「启动研镜.bat」 |
+| [Apple 芯片 Mac · 稳定性修复版](https://github.com/irisaa1099-alt/yanjing/releases/latest) | Yanjing-macOS-arm64.zip.001 至 .006 | 在下载目录打开终端，执行 `bash Yanjing-macOS-arm64-merge.command` | 完整解压，双击「启动研镜.command」 |
 
 合并脚本会生成 ZIP 并自动验证 SHA-256。Windows ZIP 为 4.37 GB，解压后约 5.11 GB。Mac ZIP 为 3.04 GB，解压后约 3.75 GB。保留分卷、合并出的 ZIP 和解压目录时，请为三份文件预留空间。应用首次启动会恢复数据库并打开浏览器，默认地址为 `http://127.0.0.1:18765`。
 
@@ -18,18 +18,18 @@
 **Windows**
 
 ```sh
-gh release download 2026.11.21-windows --repo irisaa1099-alt/yanjing --pattern "Yanjing-Windows-x64*"
+gh release download 2026.11.21-stable --repo irisaa1099-alt/yanjing --pattern "Yanjing-Windows-x64*"
 ```
 
 **macOS**
 
 ```sh
-gh release download 2026.11.20 --repo irisaa1099-alt/yanjing --pattern "Yanjing-macOS-arm64*"
+gh release download 2026.11.21-stable --repo irisaa1099-alt/yanjing --pattern "Yanjing-macOS-arm64*"
 ```
 
-## Windows 中文路径
+## 启动与已有数据
 
-可以解压到 `D:\课程资料\研镜 演示\Yanjing`。新版会自动为 PostgreSQL 选择英文路径别名，数据库保存在当前副本的 `research-lens\.local`。首次使用会恢复快照，之后启动会打开原库。已有 11 月 20 日 Windows 版且想保留自己的论文库时，请先退出并备份旧目录，将新版解压到新位置。从新目录复制 `runtime/launch.py`、`runtime/pg_paths.py` 和 `research-lens/db.py` 到旧目录的对应位置，然后双击旧目录里的启动脚本。只更新这三个文件即可保留原有数据库和附件。
+首次建库中断后，从原目录双击启动文件即可重试。正常退出请在启动窗口按 Ctrl+C，待数据库关闭后再移动整个目录。Windows 支持含中文及空格的可写本地 NTFS 目录。已有个人论文库时，请先备份整个旧目录，将新版解压到另一处。这次修复涉及两个平台的启动器和应用模块，升级请使用完整包。仓库的 `windows/` 目录记录的是早期中文路径补丁。
 
 ## 发行内容
 
