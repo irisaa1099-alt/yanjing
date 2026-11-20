@@ -29,7 +29,7 @@ gh release download 2026.11.20 --repo irisaa1099-alt/yanjing --pattern "Yanjing-
 
 ## Windows 中文路径
 
-可以解压到 `D:\课程资料\研镜 演示\Yanjing`。新版会自动为 PostgreSQL 选择英文路径别名，数据库保存在当前副本的 `research-lens\.local`。首次使用会恢复快照，之后启动会打开原库。之前已使用过旧版的用户请先退出并备份旧目录，将新版解压到新位置。
+可以解压到 `D:\课程资料\研镜 演示\Yanjing`。新版会自动为 PostgreSQL 选择英文路径别名，数据库保存在当前副本的 `research-lens\.local`。首次使用会恢复快照，之后启动会打开原库。已有 11 月 20 日 Windows 版且想保留自己的论文库时，请先退出并备份旧目录，将新版解压到新位置。从新目录复制 `runtime/launch.py`、`runtime/pg_paths.py` 和 `research-lens/db.py` 到旧目录的对应位置，然后双击旧目录里的启动脚本。只更新这三个文件即可保留原有数据库和附件。
 
 ## 发行内容
 
